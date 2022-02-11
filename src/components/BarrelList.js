@@ -1,7 +1,6 @@
 import React from 'react';
 import Barrel from './Barrel';
 import ReusableAddEditForm from './ReusableAddEditForm';
-
 import {v4} from 'uuid';
 
 class BarrelList extends React.Component {
@@ -13,6 +12,7 @@ class BarrelList extends React.Component {
       view: "Add",
       barrels : [
         {
+          id: v4(),
           tapped: false,
           name: "ale",
           brand: "house",
@@ -23,6 +23,27 @@ class BarrelList extends React.Component {
         }
       ]
     }
+  }
+
+  addBarrel(partialBarrelObj) {
+    const newBarrel = {...partialBarrelObj, id: v4(), tapped: false, pints: 124}
+    this.updateBarrelInState(newBarrel);
+  }
+
+  tapBarrel(barrel) {
+    barrel.tapped = true;
+    this.updateBarrelInState(barrel);
+  }
+
+  pullPint(barrel) {
+    barrel.pints -= 1;
+    this.updateBarrelInState(barrel);
+  }
+
+  updateBarrelInState(barrel) {
+    const newBarrels = this.state.barrels.filter(b => b.id !== barrel.id).concat(barrel);
+    //need to implement sort to keep barrels in same visual order
+    this.setState({barrels: newBarrels});
   }
   
   render() {
