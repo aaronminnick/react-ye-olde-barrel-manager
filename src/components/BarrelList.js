@@ -13,9 +13,11 @@ class BarrelList extends React.Component {
       view: "BarrelList",
       barrels : [
         {
+          tapped: false,
           name: "ale",
           brand: "house",
           price: 2,
+          pints: 124,
           alcoholContent: "strong",
           notes: "The house ale doth be very goode and tasteth only slightly of filthe."
         }
@@ -25,7 +27,6 @@ class BarrelList extends React.Component {
   
   render() {
     let currentView = null;
-    
     switch (this.state.view) {
       case "BarrelList":
         currentView = 
