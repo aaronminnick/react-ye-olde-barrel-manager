@@ -28,7 +28,8 @@ function Barrel(props) {
         <h4>Pintes remaining: {props.barrel.pints}</h4>
       </div>
       {buttonToShow}
-      <DiscardButton />
+      <DiscardButton barrel={props.barrel}
+        discardFunc={props.discardFunc} />
     </React.Fragment>
   );
 }

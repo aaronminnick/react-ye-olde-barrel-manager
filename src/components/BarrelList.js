@@ -29,22 +29,27 @@ class BarrelList extends React.Component {
     const newBarrels = this.state.barrels.filter(b => b.id !== barrel.id).concat(barrel);
     //need to implement sort to keep barrels in same visual order
     this.setState({barrels: newBarrels});
-  }
+  };
 
   tapBarrel = (barrel) => {
     barrel.tapped = true;
     this.updateBarrelInState(barrel);
-  }
+  };
 
   pullPint = (barrel) => {
     barrel.pints -= 1;
     this.updateBarrelInState(barrel);
-  }
+  };
 
   addBarrel = (partialBarrelObj) => {
     const newBarrel = {...partialBarrelObj, id: v4(), tapped: false, pints: 124}
     this.updateBarrelInState(newBarrel);
-  }
+  };
+
+  discardBarrel = (barrel) => {
+    const newBarrels = this.state.barrels.filter(b => b.id !== barrel.id);
+    this.setState({barrels: newBarrels});
+  };
   
   render() {
     let currentView = null;
@@ -57,7 +62,8 @@ class BarrelList extends React.Component {
               buttonFunc = this.pullPint :
               buttonFunc = this.tapBarrel; 
             return <Barrel barrel={b}
-              buttonFunc = {buttonFunc} 
+              buttonFunc = {buttonFunc}
+              discardFunc = {this.discardBarrel} 
               key={v4()} />
           }
           );
