@@ -1,5 +1,6 @@
 import React from 'react';
 import Barrel from './Barrel';
+import AddButton from './AddButton';
 import ReusableAddEditForm from './ReusableAddEditForm';
 import {v4} from 'uuid';
 import Container from 'react-bootstrap/Container';
@@ -89,11 +90,7 @@ class BarrelList extends React.Component {
               key={v4()} />
           }
           ).concat(
-            <div className="barrel" onClick={() => this.updateView("Add")}>
-              <div className="barrel-contents">
-                <h2>Add a new barrel to stocke</h2>
-              </div>
-            </div>
+            <AddButton viewFunc={this.updateView} />
           );
         break;
       case "Add":
