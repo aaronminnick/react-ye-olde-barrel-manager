@@ -11,21 +11,26 @@ function Barrel(props) {
   };
 
   let buttonToShow = null;
-  (props.barrel.tapped) ?
+  let pintsText = "";
+  if (props.barrel.tapped) {
     buttonToShow = <PintButton barrel={props.barrel}
-      pullPint={props.buttonFunc} /> :
+      pullPint={props.buttonFunc} />
+    pintsText = `Pintes remaining: ${props.barrel.pints}`;
+  } else {
     buttonToShow = <TapButton barrel={props.barrel}
       tapBarrel={props.buttonFunc} />;
+    pintsText = "Untapped";
+  }
 
   return (
     <React.Fragment>
       <div className="barrel">
         <div className="barrel-contents">
-          <h2>{props.barrel.brand} {props.barrel.name}</h2>
-          <h3>{props.barrel.price} shillings</h3>
-          <p><em>{props.barrel.strength}</em></p>
-          <p>{props.barrel.notes}</p>
-          <h4>Pintes remaining: {props.barrel.pints}</h4>
+          <h3>{props.barrel.brand} {props.barrel.name}</h3>
+          <p><em>({props.barrel.strength})</em></p>
+          <h4>Coste: {props.barrel.price} shillings</h4>
+          <p><em>{props.barrel.notes}</em></p>
+          <h4>{pintsText}</h4>
           {buttonToShow}
           <button onClick={handleEditClick}>Edit this barrel</button>
           <DiscardButton barrel={props.barrel}

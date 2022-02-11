@@ -50,22 +50,28 @@ function ReusableAddEditForm(props) {
     buttonText = "Add to stocke"
 
   return (
-    <form onSubmit={handleSubmit}>
-      <label for="name">Name: </label>
-      <input type="text" id="name" name="name" defaultValue={barrel.name} required />
-      <label for="brand">Maker: </label>
-      <input type="text" id="brand" name="brand" defaultValue={barrel.brand} required />
-      <label for="price">Shillings: </label>
-      <input type="number" id="price" name="price" min="1" step="1" defaultValue={barrel.price} required/>
-      <label for="strength">Strength:</label>
-      <select id="strength" name="strength" defaultValue={barrel.strength}>
-        <option value="milde">Milde</option>
-        <option value="strong">Strong</option>
-      </select>
-      <label for="notes">Notes:</label>
-      <textarea id="notes" name="notes" defaultValue={barrel.notes} required></textarea>
-      <button type="submit">{buttonText}</button>
-    </form>
+    <div className="add-edit-form">
+      <form onSubmit={handleSubmit}>
+        <label for="name">Name : </label>
+        <input type="text" id="name" name="name" defaultValue={barrel.name} required />
+        <label for="brand">Maker : </label>
+        <input type="text" id="brand" name="brand" defaultValue={barrel.brand} required />
+        <hr/>
+        <label for="price">Coste in Shillings : </label>
+        <input type="number" id="price" name="price" min="1" step="1" defaultValue={barrel.price} required/>
+        <hr/>
+        <label for="strength">Strength :</label>
+        <select id="strength" name="strength" defaultValue={barrel.strength}>
+          <option value="milde">Milde</option>
+          <option value="strong">Strong</option>
+        </select>
+        <hr/>
+        <label for="notes">Notes :</label>
+        <textarea id="notes" name="notes" defaultValue={barrel.notes} required></textarea>
+        <hr/>
+        <button type="submit">{buttonText}</button>
+      </form>
+    </div>
   );
 }
 

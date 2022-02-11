@@ -17,9 +17,9 @@ class BarrelList extends React.Component {
         {
           id: v4(),
           tapped: false,
-          name: "ale",
-          brand: "house",
-          price: 3,
+          name: "Ale",
+          brand: "House",
+          price: 5,
           pints: 124,
           strength: "strong",
           notes: "The house ale doth be very goode and tasteth only slightly of filthe."
@@ -27,8 +27,8 @@ class BarrelList extends React.Component {
         {
           id: v4(),
           tapped: false,
-          name: "small ale",
-          brand: "house",
+          name: "Small Ale",
+          brand: "House",
           price: 2,
           pints: 124,
           strength: "milde",
@@ -112,6 +112,9 @@ class BarrelList extends React.Component {
 
     return (
       <React.Fragment>
+        <Container className="header">
+          <h1>Ye Olde Barrel Management</h1>
+        </Container>
         <Container>
           <Row>
             {currentView}
