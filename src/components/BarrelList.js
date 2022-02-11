@@ -9,7 +9,7 @@ class BarrelList extends React.Component {
     super(props);
     
     this.state = {
-      view: "Add",
+      view: "List",
       barrels : [
         {
           id: v4(),
@@ -24,36 +24,42 @@ class BarrelList extends React.Component {
       ]
     }
   }
-
-  addBarrel(partialBarrelObj) {
-    const newBarrel = {...partialBarrelObj, id: v4(), tapped: false, pints: 124}
-    this.updateBarrelInState(newBarrel);
+  
+  updateBarrelInState = (barrel) => {
+    const newBarrels = this.state.barrels.filter(b => b.id !== barrel.id).concat(barrel);
+    //need to implement sort to keep barrels in same visual order
+    this.setState({barrels: newBarrels});
   }
 
-  tapBarrel(barrel) {
+  tapBarrel = (barrel) => {
     barrel.tapped = true;
     this.updateBarrelInState(barrel);
   }
 
-  pullPint(barrel) {
+  pullPint = (barrel) => {
     barrel.pints -= 1;
     this.updateBarrelInState(barrel);
   }
 
-  updateBarrelInState(barrel) {
-    const newBarrels = this.state.barrels.filter(b => b.id !== barrel.id).concat(barrel);
-    //need to implement sort to keep barrels in same visual order
-    this.setState({barrels: newBarrels});
+  addBarrel = (partialBarrelObj) => {
+    const newBarrel = {...partialBarrelObj, id: v4(), tapped: false, pints: 124}
+    this.updateBarrelInState(newBarrel);
   }
   
   render() {
     let currentView = null;
     switch (this.state.view) {
-      case "BarrelList":
+      case "List":
         currentView = 
-          this.state.barrels.map(b =>
-            <Barrel barrel={b} 
+          this.state.barrels.map(b => {
+            let buttonFunc = null;
+            (b.tapped) ?
+              buttonFunc = this.pullPint :
+              buttonFunc = this.tapBarrel; 
+            return <Barrel barrel={b}
+              buttonFunc = {buttonFunc} 
               key={v4()} />
+          }
           );
         break;
       case "Add":
