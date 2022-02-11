@@ -5,14 +5,14 @@ function PintButton(props) {
 
   const handleClick = () => {
     props.pullPint(props.barrel);
-  }
+  };
 
   return (
     <button onClick={handleClick}>Pulle a pinte</button>
   );
 }
 
-PintButton.PropTypes = {
+PintButton.propTypes = {
   barrel: PropTypes.object.isRequired,
   pullPint: PropTypes.func.isRequired
 };

@@ -12,7 +12,7 @@ function DiscardButton(props) {
   );
 }
 
-DiscardButton.PropTypes = {
+DiscardButton.propTypes = {
   barrel: PropTypes.object.isRequired,
   discardFunc: PropTypes.func.isRequired
 };

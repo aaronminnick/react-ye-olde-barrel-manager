@@ -76,7 +76,7 @@ function ReusableAddEditForm(props) {
   );
 }
 
-ReusableAddEditForm.PropTypes = {
+ReusableAddEditForm.propTypes = {
   mode: PropTypes.string.isRequired,
   barrel: PropTypes.object,
   submitFunc: PropTypes.func.isRequired,
