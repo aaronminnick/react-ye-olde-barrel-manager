@@ -47,8 +47,7 @@ class BarrelList extends React.Component {
   }
 
   updateBarrelInState = (barrel) => {
-    const newBarrels = this.state.barrels.filter(b => b.id !== barrel.id).concat(barrel);
-    //need to implement sort to keep barrels in same visual order
+    const newBarrels = this.state.barrels.filter(b => b.id !== barrel.id).concat(barrel).sort((a, b) => (a.name > b.name) ? 1 : -1);
     this.setState({barrels: newBarrels});
   };
 
