@@ -1,0 +1,16 @@
+body {
+  background-color: rgb(53, 27, 21);
+}
+
+.barrel {
+  background-color: blanchedalmond;
+  border: 10px solid brown;
+  border-radius: 50%;
+  height: 400px;
+  width: 400px;
+}
+
+.barrel-contents {
+  margin: 50px;
+  text-align: center;
+}

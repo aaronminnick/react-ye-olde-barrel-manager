@@ -5,12 +5,6 @@ import DiscardButton from './DiscardButton';
 
 function Barrel(props) {
 
-  const BarrelStyle = {
-    backgroundColor: "blanchedalmond",
-    border: "2px solid brown",
-    // borderRadius: "50%"
-  }
-
   const handleEditClick = () => {
     props.updateEditBarrelFunc(props.barrel);
     props.viewFunc("Edit");
@@ -25,17 +19,19 @@ function Barrel(props) {
 
   return (
     <React.Fragment>
-      <div style={BarrelStyle}>
-        <h2>{props.barrel.brand} {props.barrel.name}</h2>
-        <h3>{props.barrel.price} shillings</h3>
-        <p><em>{props.barrel.strength}</em></p>
-        <p>{props.barrel.notes}</p>
-        <h4>Pintes remaining: {props.barrel.pints}</h4>
+      <div className="barrel">
+        <div className="barrel-contents">
+          <h2>{props.barrel.brand} {props.barrel.name}</h2>
+          <h3>{props.barrel.price} shillings</h3>
+          <p><em>{props.barrel.strength}</em></p>
+          <p>{props.barrel.notes}</p>
+          <h4>Pintes remaining: {props.barrel.pints}</h4>
+          {buttonToShow}
+          <button onClick={handleEditClick}>Edit this barrel</button>
+          <DiscardButton barrel={props.barrel}
+            discardFunc={props.discardFunc} />
+        </div>
       </div>
-      {buttonToShow}
-      <button onClick={handleEditClick}>Edit this barrel</button>
-      <DiscardButton barrel={props.barrel}
-        discardFunc={props.discardFunc} />
     </React.Fragment>
   );
 }

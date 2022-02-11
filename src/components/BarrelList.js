@@ -2,6 +2,8 @@ import React from 'react';
 import Barrel from './Barrel';
 import ReusableAddEditForm from './ReusableAddEditForm';
 import {v4} from 'uuid';
+import Container from 'react-bootstrap/Container';
+import Row from 'react-bootstrap/Row';
 
 class BarrelList extends React.Component {
 
@@ -17,10 +19,20 @@ class BarrelList extends React.Component {
           tapped: false,
           name: "ale",
           brand: "house",
-          price: 2,
+          price: 3,
           pints: 124,
           strength: "strong",
           notes: "The house ale doth be very goode and tasteth only slightly of filthe."
+        },
+        {
+          id: v4(),
+          tapped: false,
+          name: "small ale",
+          brand: "house",
+          price: 2,
+          pints: 124,
+          strength: "milde",
+          notes: "Small ale doth be goode for persons of weake constitution such as children or the eldery."
         }
       ]
     }
@@ -59,7 +71,7 @@ class BarrelList extends React.Component {
     const newBarrels = this.state.barrels.filter(b => b.id !== barrel.id);
     this.setState({barrels: newBarrels});
   };
-  
+
   render() {
     let currentView = null;
     switch (this.state.view) {
@@ -78,7 +90,11 @@ class BarrelList extends React.Component {
               key={v4()} />
           }
           ).concat(
-          <button onClick={() => this.updateView("Add")}>Add a new barrel to stocke</button>
+            <div className="barrel" onClick={() => this.updateView("Add")}>
+              <div className="barrel-contents">
+                <h2>Add a new barrel to stocke</h2>
+              </div>
+            </div>
           );
         break;
       case "Add":
@@ -96,7 +112,11 @@ class BarrelList extends React.Component {
 
     return (
       <React.Fragment>
-        {currentView}
+        <Container>
+          <Row>
+            {currentView}
+          </Row>
+        </Container>
       </React.Fragment>
     );
   }
