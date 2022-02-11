@@ -6,6 +6,15 @@ function ReusableAddEditForm(props) {
     event.preventDefault();
     switch (props.mode) {
       case "Add":
+        barrel = {
+          name: event.target.name.value,
+          brand: event.target.brand.value,
+          price: event.target.price.value,
+          strength: event.target.strength.value,
+          notes: event.target.notes.value
+        }
+        props.submitFunc(barrel)
+        props.viewFunc("List");
         break;
       case "Edit":
         barrel = {
@@ -16,7 +25,7 @@ function ReusableAddEditForm(props) {
           strength: event.target.strength.value,
           notes: event.target.notes.value
         }
-        props.editFunc(barrel)
+        props.submitFunc(barrel)
         props.viewFunc("List");
         break;
     }

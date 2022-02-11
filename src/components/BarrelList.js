@@ -77,15 +77,19 @@ class BarrelList extends React.Component {
               discardFunc = {this.discardBarrel} 
               key={v4()} />
           }
+          ).concat(
+          <button onClick={() => this.updateView("Add")}>Add a new barrel to stocke</button>
           );
         break;
       case "Add":
-        currentView = <ReusableAddEditForm mode="Add" />
+        currentView = <ReusableAddEditForm mode="Add"
+          submitFunc={this.addBarrel}
+          viewFunc = {this.updateView} />
         break;
       case "Edit":
         currentView = <ReusableAddEditForm mode="Edit"
           barrel={this.state.barrelToEdit}
-          editFunc={this.updateBarrelInState}
+          submitFunc={this.updateBarrelInState}
           viewFunc = {this.updateView} />
         break;
     }
