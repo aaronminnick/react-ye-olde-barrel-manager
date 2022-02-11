@@ -21,7 +21,7 @@ function Barrel(props) {
       <div style={BarrelStyle}>
         <h2>{props.barrel.brand} {props.barrel.name}</h2>
         <h3>{props.barrel.price} shillings</h3>
-        <p><em>{props.barrel.alcoholContent}</em></p>
+        <p><em>{props.barrel.strength}</em></p>
         <p>{props.barrel.notes}</p>
       </div>
       {buttonToShow}

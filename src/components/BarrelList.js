@@ -10,7 +10,7 @@ class BarrelList extends React.Component {
     super(props);
     
     this.state = {
-      view: "BarrelList",
+      view: "Add",
       barrels : [
         {
           tapped: false,
@@ -18,7 +18,7 @@ class BarrelList extends React.Component {
           brand: "house",
           price: 2,
           pints: 124,
-          alcoholContent: "strong",
+          strength: "strong",
           notes: "The house ale doth be very goode and tasteth only slightly of filthe."
         }
       ]
