@@ -11,6 +11,11 @@ function Barrel(props) {
     // borderRadius: "50%"
   }
 
+  const handleEditClick = () => {
+    props.updateEditBarrelFunc(props.barrel);
+    props.viewFunc("Edit");
+  };
+
   let buttonToShow = null;
   (props.barrel.tapped) ?
     buttonToShow = <PintButton barrel={props.barrel}
@@ -28,6 +33,7 @@ function Barrel(props) {
         <h4>Pintes remaining: {props.barrel.pints}</h4>
       </div>
       {buttonToShow}
+      <button onClick={handleEditClick}>Edit this barrel</button>
       <DiscardButton barrel={props.barrel}
         discardFunc={props.discardFunc} />
     </React.Fragment>

@@ -8,6 +8,16 @@ function ReusableAddEditForm(props) {
       case "Add":
         break;
       case "Edit":
+        barrel = {
+          ...barrel,
+          name: event.target.name.value,
+          brand: event.target.brand.value,
+          price: event.target.price.value,
+          strength: event.target.strength.value,
+          notes: event.target.notes.value
+        }
+        props.editFunc(barrel)
+        props.viewFunc("List");
         break;
     }
   }

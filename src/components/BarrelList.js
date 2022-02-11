@@ -10,6 +10,7 @@ class BarrelList extends React.Component {
     
     this.state = {
       view: "List",
+      barrelToEdit: null,
       barrels : [
         {
           id: v4(),
@@ -25,6 +26,14 @@ class BarrelList extends React.Component {
     }
   }
   
+  updateView = (viewName) => {
+    this.setState({view: viewName});
+  };
+
+  updateBarrelToEdit = (barrel) => {
+    this.setState({barrelToEdit: barrel});
+  }
+
   updateBarrelInState = (barrel) => {
     const newBarrels = this.state.barrels.filter(b => b.id !== barrel.id).concat(barrel);
     //need to implement sort to keep barrels in same visual order
@@ -63,6 +72,8 @@ class BarrelList extends React.Component {
               buttonFunc = this.tapBarrel; 
             return <Barrel barrel={b}
               buttonFunc = {buttonFunc}
+              updateEditBarrelFunc = {this.updateBarrelToEdit}
+              viewFunc = {this.updateView}
               discardFunc = {this.discardBarrel} 
               key={v4()} />
           }
@@ -72,7 +83,10 @@ class BarrelList extends React.Component {
         currentView = <ReusableAddEditForm mode="Add" />
         break;
       case "Edit":
-        currentView = <ReusableAddEditForm mode="Edit" />
+        currentView = <ReusableAddEditForm mode="Edit"
+          barrel={this.state.barrelToEdit}
+          editFunc={this.updateBarrelInState}
+          viewFunc = {this.updateView} />
         break;
     }
 
