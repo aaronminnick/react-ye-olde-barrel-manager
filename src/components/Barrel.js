@@ -2,6 +2,7 @@ import React from 'react';
 import PintButton from './PintButton';
 import TapButton from './TapButton';
 import DiscardButton from './DiscardButton';
+import PropTypes from 'prop-types';
 
 function Barrel(props) {
 
@@ -40,5 +41,13 @@ function Barrel(props) {
     </React.Fragment>
   );
 }
+
+Barrel.propTypes = {
+  barrel: PropTypes.object.isRequired,
+  buttonFunc: PropTypes.func.isRequired,
+  updateEditBarrelFunc: PropTypes.func.isRequired,
+  viewFunc: PropTypes.func.isRequired,
+  discardFunc: PropTypes.func.isRequired
+};
 
 export default Barrel;

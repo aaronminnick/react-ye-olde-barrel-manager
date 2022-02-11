@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 function PintButton(props) {
 
@@ -10,5 +11,10 @@ function PintButton(props) {
     <button onClick={handleClick}>Pulle a pinte</button>
   );
 }
+
+PintButton.PropTypes = {
+  barrel: PropTypes.object.isRequired,
+  pullPint: PropTypes.func.isRequired
+};
 
 export default PintButton;

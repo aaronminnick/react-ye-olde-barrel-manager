@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 function DiscardButton(props) {
 
@@ -10,5 +11,10 @@ function DiscardButton(props) {
     <button onClick={handleClick}>Discarde this barrel</button>
   );
 }
+
+DiscardButton.PropTypes = {
+  barrel: PropTypes.object.isRequired,
+  discardFunc: PropTypes.func.isRequired
+};
 
 export default DiscardButton;

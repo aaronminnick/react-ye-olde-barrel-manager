@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 function TapButton(props) {
 
@@ -9,6 +10,11 @@ function TapButton(props) {
   return (
     <button onClick={handleClick}>Tap</button>
   );
+}
+
+TapButton.PropTypes = {
+  barrel: PropTypes.object.isRequired,
+  tapBarrel: PropTypes.func.isRequired
 }
 
 export default TapButton;

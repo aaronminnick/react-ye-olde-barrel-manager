@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 function ReusableAddEditForm(props) {
 
@@ -74,5 +75,12 @@ function ReusableAddEditForm(props) {
     </div>
   );
 }
+
+ReusableAddEditForm.PropTypes = {
+  mode: PropTypes.string.isRequired,
+  barrel: PropTypes.object,
+  submitFunc: PropTypes.func.isRequired,
+  viewFunc: PropTypes.func.isRequired
+};
 
 export default ReusableAddEditForm;
