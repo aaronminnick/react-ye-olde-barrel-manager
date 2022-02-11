@@ -1,8 +1,13 @@
 import React from 'react';
 
 function PintButton(props) {
+
+  const handleClick = () => {
+    props.pullPint(props.barrel);
+  }
+
   return (
-    <button>Pulle a pint</button>
+    <button onClick={handleClick}>Pulle a pinte</button>
   );
 }
 

@@ -1,8 +1,13 @@
 import React from 'react';
 
 function TapButton(props) {
+
+  const handleClick = () => {
+    props.tapBarrel(props.barrel);
+  }
+
   return (
-    <button>Tap</button>
+    <button onClick={handleClick}>Tap</button>
   );
 }
 
