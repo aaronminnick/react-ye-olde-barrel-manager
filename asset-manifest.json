@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/ye-olde-barrel-manager/static/css/main.c87b7301.css",
+    "main.js": "/ye-olde-barrel-manager/static/js/main.6501b6fb.js",
+    "static/js/787.5736691d.chunk.js": "/ye-olde-barrel-manager/static/js/787.5736691d.chunk.js",
+    "static/media/wood-slats.png": "/ye-olde-barrel-manager/static/media/wood-slats.2acfaada00477b418d98.png",
+    "index.html": "/ye-olde-barrel-manager/index.html",
+    "main.c87b7301.css.map": "/ye-olde-barrel-manager/static/css/main.c87b7301.css.map",
+    "main.6501b6fb.js.map": "/ye-olde-barrel-manager/static/js/main.6501b6fb.js.map",
+    "787.5736691d.chunk.js.map": "/ye-olde-barrel-manager/static/js/787.5736691d.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.c87b7301.css",
+    "static/js/main.6501b6fb.js"
+  ]
+}
