@@ -1,7 +1,7 @@
 {
   "name": "ye-olde-barrel-manager",
   "version": "0.1.0",
-  "homepage": "https://aaronminnick.github.io/ye-olde-barrel-manager/",
+  "homepage": "https://aaronminnick.github.io/react-ye-olde-barrel-manager/",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.2",
