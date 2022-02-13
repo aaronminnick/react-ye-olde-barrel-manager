@@ -23,7 +23,7 @@ class BarrelList extends React.Component {
           price: 5,
           pints: 124,
           strength: "strong",
-          notes: "The house ale doth be very goode and tasteth only slightly of filthe."
+          notes: "The house ale doth be very goode and tasteth only slightlee of filthe."
         },
         {
           id: v4(),
@@ -33,7 +33,7 @@ class BarrelList extends React.Component {
           price: 2,
           pints: 124,
           strength: "milde",
-          notes: "Small ale doth be goode for persons of weake constitution such as children or the eldery."
+          notes: "Small ale doth be goode for persons of weake constitution such as children or the elderlee."
         }
       ]
     }
@@ -58,7 +58,7 @@ class BarrelList extends React.Component {
   };
 
   pullPint = (barrel) => {
-    barrel.pints -= 1;
+    barrel.pints = Math.max(barrel.pints - 1, 0);
     this.updateBarrelInState(barrel);
   };
 

@@ -16,7 +16,9 @@ function Barrel(props) {
   if (props.barrel.tapped) {
     buttonToShow = <PintButton barrel={props.barrel}
       pullPint={props.buttonFunc} />
-    pintsText = `Pintes remaining: ${props.barrel.pints}`;
+      pintsText = props.barrel.pints > 0 ? 
+        `Pintes remaining: ${props.barrel.pints}` :
+        "Emptee";
   } else {
     buttonToShow = <TapButton barrel={props.barrel}
       tapBarrel={props.buttonFunc} />;
