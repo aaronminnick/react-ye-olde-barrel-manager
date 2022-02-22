@@ -1,7 +1,9 @@
 # Ye Olde Barrel Manager
 #### _by Aaron Minnick_
 ### Technologies Used:
-* HTML/CSS/Javascript
+* HTML/CSS
+* Javascript
+* Node.js
 * React.js
 
 This is my independent project for week 2 of the React curriculum at [Epicodus](https://www.epicodus.com). Ye Olde Barrel Manager is a single-page React app which allows for full CRUD functionality to manage a collection of barrels in a fictional medieval tavern.

@@ -87,10 +87,11 @@ class BarrelList extends React.Component {
               updateEditBarrelFunc = {this.updateBarrelToEdit}
               viewFunc = {this.updateView}
               discardFunc = {this.discardBarrel} 
-              key={v4()} />
+              key={b.id} />
           }
           ).concat(
-            <AddButton viewFunc={this.updateView} />
+            <AddButton viewFunc={this.updateView} 
+            key={v4()} />
           );
         break;
       case "Add":
