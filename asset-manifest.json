@@ -1,16 +1,16 @@
 {
   "files": {
     "main.css": "/react-ye-olde-barrel-manager/static/css/main.53b77269.css",
-    "main.js": "/react-ye-olde-barrel-manager/static/js/main.0904f3cd.js",
+    "main.js": "/react-ye-olde-barrel-manager/static/js/main.7e47745c.js",
     "static/js/787.5736691d.chunk.js": "/react-ye-olde-barrel-manager/static/js/787.5736691d.chunk.js",
     "static/media/wood-slats.png": "/react-ye-olde-barrel-manager/static/media/wood-slats.2acfaada00477b418d98.png",
     "index.html": "/react-ye-olde-barrel-manager/index.html",
     "main.53b77269.css.map": "/react-ye-olde-barrel-manager/static/css/main.53b77269.css.map",
-    "main.0904f3cd.js.map": "/react-ye-olde-barrel-manager/static/js/main.0904f3cd.js.map",
+    "main.7e47745c.js.map": "/react-ye-olde-barrel-manager/static/js/main.7e47745c.js.map",
     "787.5736691d.chunk.js.map": "/react-ye-olde-barrel-manager/static/js/787.5736691d.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.53b77269.css",
-    "static/js/main.0904f3cd.js"
+    "static/js/main.7e47745c.js"
   ]
 }
